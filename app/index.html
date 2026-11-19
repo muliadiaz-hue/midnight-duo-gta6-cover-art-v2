@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midnight Duo — GTA 6-style cover maker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>MIDNIGHT DUO</h1>
+    <p class="tag">Turn your photos into a neon-night cover</p>
+  </header>
+
+  <main>
+    <section class="stage-wrap">
+      <canvas id="cover" width="960" height="540"></canvas>
+      <p id="status">loading samples…</p>
+    </section>
+
+    <aside class="controls">
+      <h2>Photos</h2>
+      <div id="tray" class="tray"></div>
+      <label class="upload">Upload a photo
+        <input type="file" id="upload" accept="image/*">
+      </label>
+      <p class="hint">Click a sample to drop it on the selected panel. Drag the cover to pan, scroll to zoom.</p>
+
+      <h2>Layout</h2>
+      <div id="layouts" class="buttons"></div>
+
+      <h2>Grade</h2>
+      <div id="grades" class="buttons"></div>
+
+      <h2>Words</h2>
+      <label>Title <input id="caption" type="text" value="MIDNIGHT DUO" maxlength="40"></label>
+      <label>Tagline <input id="subtitle" type="text" value="TWO LEADS · ONE SCORE" maxlength="48"></label>
+      <label>City <input id="city" type="text" value="AZURA BAY" maxlength="24"></label>
+
+      <h2>Export</h2>
+      <label>Size
+        <select id="size">
+          <option value="wide">Wide 1920×1080</option>
+          <option value="square">Square 1080×1080</option>
+          <option value="portrait">Portrait 1080×1350</option>
+          <option value="story">Story 1080×1920</option>
+        </select>
+      </label>
+      <label class="check"><input id="captions" type="checkbox"> Per-panel captions</label>
+      <div class="row">
+        <button id="export" type="button" class="primary">Export PNG</button>
+        <button id="undo" type="button">Undo</button>
+        <button id="redo" type="button">Redo</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Midnight Duo — an offline cover maker for the make.fun gta6-cover-art-01 bounty.
+    Photos are AI-generated samples; fonts Anton, Pacifico and Passion One are SIL OFL.</p>
+  </footer>
+</div>
+
+<div id="stage" style="display:none">
+  <canvas id="shot"></canvas>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

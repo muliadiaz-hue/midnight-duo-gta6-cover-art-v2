@@ -1,0 +1,92 @@
+/* Midnight Duo editor chrome: dark neon, quiet so the cover stays loud. */
+@font-face {
+  font-family: "Anton";
+  src: url("fonts/Anton-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pacifico";
+  src: url("fonts/Pacifico-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Passion One";
+  src: url("fonts/PassionOne.ttf") format("truetype");
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #0d0616;
+  color: #f2e9ff;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+#app { max-width: 1240px; margin: 0 auto; padding: 20px 24px 32px; }
+header h1 {
+  margin: 0;
+  font-family: "Passion One", "Anton", sans-serif;
+  font-size: 44px;
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, #7b2ff7, #e0218a 52%, #ff9a3d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+header .tag { margin: 2px 0 0; color: #c9a8e8; }
+main { display: flex; gap: 24px; margin-top: 18px; align-items: flex-start; }
+.stage-wrap { flex: 1 1 auto; min-width: 0; }
+#cover {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #12081f;
+  border: 1px solid #3a1c5c;
+  border-radius: 10px;
+  cursor: grab;
+}
+#cover:active { cursor: grabbing; }
+#status { color: #a98cc9; font-size: 13px; margin: 8px 2px 0; }
+.controls { flex: 0 0 300px; }
+.controls h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff7ad9;
+  margin: 18px 0 8px;
+}
+.controls h2:first-child { margin-top: 0; }
+.tray { display: flex; gap: 8px; }
+.tray img {
+  width: 52px; height: 52px; object-fit: cover;
+  border-radius: 6px; border: 2px solid transparent; cursor: pointer;
+}
+.tray img:hover { border-color: #e0218a; }
+.upload {
+  display: inline-block; margin-top: 10px; padding: 8px 12px;
+  border: 1px dashed #7b4bb3; border-radius: 8px; cursor: pointer; color: #d9c2f2;
+}
+.upload input { display: none; }
+.hint { color: #a98cc9; font-size: 12.5px; line-height: 1.5; }
+.buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+button {
+  background: #241335; color: #f2e9ff; border: 1px solid #4a2a6e;
+  border-radius: 8px; padding: 7px 11px; cursor: pointer; font-size: 13px;
+}
+button:hover { border-color: #e0218a; }
+button.active { background: #e0218a; border-color: #e0218a; color: #fff; }
+button.primary { background: #e0218a; border-color: #e0218a; color: #fff; font-weight: 700; }
+.controls label { display: block; margin: 8px 0; font-size: 13px; color: #c9a8e8; }
+.controls input[type="text"], .controls select {
+  width: 100%; margin-top: 4px; padding: 8px 10px;
+  background: #1a0b2c; color: #fff; border: 1px solid #4a2a6e; border-radius: 8px;
+  font-size: 14px;
+}
+.controls .check { display: flex; gap: 8px; align-items: center; }
+.controls .check input { width: auto; }
+.row { display: flex; gap: 8px; margin-top: 12px; }
+footer { margin-top: 28px; color: #8a6aa8; font-size: 12.5px; line-height: 1.6; }
+#stage { margin: 0; padding: 0; }
+#stage canvas { display: block; }
+@media (max-width: 860px) {
+  main { flex-direction: column; }
+  .controls { flex-basis: auto; width: 100%; }
+}
